@@ -43,7 +43,7 @@ hashStore :: FilePath
           -> (String, ByteString)
              -- ^ File name
           -> IO String
-             -- ^ Hash of given 'ByteString'
+             -- ^ File name with hash
 hashStore storePath action (name, actionInput) = do
     createDirectoryIfMissing True storePath
     let hashName  = hashFile actionInput name
@@ -70,7 +70,7 @@ hashStoreWithContent :: FilePath
                      -> (String, ByteString)
                         -- ^ File name
                      -> IO (String, ByteString)
-                        -- ^ Hash of given 'ByteString' and content of file
+                        -- ^ File name with hash and content of file
 hashStoreWithContent storePath action (name, actionInput) = do
     -- code duplication with `hashStore` could be avoided, but it doesn't
     -- actually make code shorter or simpler
