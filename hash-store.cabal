@@ -27,6 +27,7 @@ library
 
   ghc-options:         -Wall
   build-depends:       base >= 4.9 && < 5
+                     , base16-bytestring
                      , blake2
                      , bytestring >= 0.10
                      , directory >= 1.3
